@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% for article in latests_articles %}
+        <div class="article">
+            <div class="article-img-container ">
+                <img src="{{ article.cover_photo }}" alt="Article cover photo">
+            </div>
+            <div class="article-date-container">
+                <span class="article-date">{{ article.published_date }}</span>
+            </div>
+            <div class="article-body">
+                <a href="{% url 'points:classes' %}" class="article-title"><h5>{{ article.title }}</h5></a>
+                <p class="article-description">{{ article.description | truncatechars:100 | capfirst }}</p>
+            </div>
+            {% if user.is_authenticated %}
+                <div class="article-admin-container">
+                    <a href="{% url 'points:article_edit' pk=article.id %}" class="btn btn-primary article-adminButton"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="{% url 'points:article_delete' pk=article.id %}" class="btn btn-danger article-adminButton"><i class="fa-solid fa-trash"></i></a>
+                </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

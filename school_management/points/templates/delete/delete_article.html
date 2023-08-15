@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Usuń artykuł
+{% endblock %}
+
+{% block content %}
+    <h1>Usuń artykuł</h1>
+    <form method="post">
+        {% csrf_token %}
+        <p>Jesteś pewny(-a) by usunąć {{ article.title }} - {{ article.published_date }} artykuł ?</p>
+        <button class="btn btn-primary" type="submit">Usuń</button>
+    </form>
+{% endblock %}

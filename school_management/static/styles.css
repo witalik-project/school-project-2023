@@ -1,0 +1,87 @@
+body {
+    overflow-x: hidden;
+}
+
+.form-item input, .form-item textarea, .form-item select {
+    display: block;
+    width: 100%;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-top: 0.25rem;
+}
+
+.form-item input:focus, .form-item textarea:focus, .form-item select:focus {
+    color: #212529;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+.popup {
+    display: none;
+}
+.popup-show{
+    display: block;
+}
+
+.navbar-nav {
+    text-align: right;
+}
+
+[class^="icon-"] {
+    width: 2rem;
+    height: auto;
+    fill: #222;
+}
+
+.article {
+    position: relative;
+    width: 300px;
+    height: 420px;
+    margin: 0 20px 20px 0;
+}
+
+.article-img-container {
+    width: 300px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+  
+.article-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-date-container {
+    margin-bottom: 20px;
+    padding: 0 10px 0 10px;
+}
+
+.article-date {
+    font-size: small;
+    color: grey;
+}
+
+.article-body {
+    padding: 0 10px 0 10px;
+}
+
+.article-title {
+    text-decoration: none;
+    color: black;
+}
+
+.article-title:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.article-admin-container {
+    position: absolute;
+    bottom: 0;
+}

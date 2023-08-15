@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Stwórz turniej
+{% endblock %}
+
+{% block content %}
+    <h1>Stwórz turniej</h1>
+    <form action="{% url 'tournaments:tournament_create' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-item mt-3 mb-3">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in field.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <button class="btn btn-primary" type="submit">Stwórz</button>
+    </form>
+{% endblock %}

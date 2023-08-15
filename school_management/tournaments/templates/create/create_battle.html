@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Stwórz pojedynek
+{% endblock %}
+
+{% block content %}
+    <h1>Stwórz pojedynek dla {{ tournamentday.tournament.name }} turnieju</h1>
+    <form action="{% url 'tournaments:tournament_battle_create' pk=tournamentday.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-item mt-3 mb-3 d-none">
+            {{ form.battle_day }}
+            <input type="hidden" name="{{ form.battle_day.name }}" value="{{ form.battle_day.value }}">
+        </div>
+        <div class="form-item mt-3 mb-3">
+            {{ form.battle_first_oponent.label_tag }}
+            {{ form.battle_first_oponent }}
+            {{ form.battle_first_oponent.errors }}
+        </div>
+        <div class="form-item mt-3 mb-3">
+            {{ form.battle_second_oponent.label_tag }}
+            {{ form.battle_second_oponent }}
+            {{ form.battle_second_oponent.errors }}
+        </div>
+        <div class="form-item mt-3 mb-3">
+            {{ form.battle_time.label_tag }}
+            {{ form.battle_time }}
+            {{ form.battle_time.errors }}
+        </div>
+        <div class="form-item mt-3 mb-3">
+            {{ form.battle_is_finished.label_tag }}
+            {{ form.battle_is_finished }}
+            {{ form.battle_is_finished.errors }}
+        </div>
+        <div class="form-item mt-3 mb-3">
+            {{ form.winner.label_tag }}
+            {{ form.winner }}
+            {{ form.winner.errors }}
+        </div>
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <button class="btn btn-primary" type="submit">Stwórz</button>
+    </form>
+{% endblock %}

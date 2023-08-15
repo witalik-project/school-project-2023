@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    Odejmij punkty
+{% endblock %}
+
+{% block content %}
+    <h1>Odejmij punkty dla {{ classes.class_number }}{{classes.class_letter }} klasy</h1>
+    <form action="{% url 'points:points_substract_log_create' pk=classes.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-item mt-3 mb-3">
+                {{ field.label_tag }}
+                {{ field }}
+                {{ field.errors }}
+            </div>
+        {% endfor %}
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags == 'error' %}
+                    <div class="alert alert-danger mt-3" role="alert">
+                        {{ message }}
+                    </div>
+                {% else %}
+                    <div class="alert alert-{{ message.tags }} mt-3" role="alert">
+                        {{ message }}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+        <button class="btn btn-primary" type="submit">Odejmij</button>
+    </form>
+{% endblock %}
