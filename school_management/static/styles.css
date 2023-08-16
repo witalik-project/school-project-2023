@@ -121,6 +121,10 @@ body {
 
 .articleView-body-description {
     display: block;
+    width:500px;
+    height:400px;
+    line-height:2em;
+    overflow:scroll;
 }
 
 .imgGallery-container {
