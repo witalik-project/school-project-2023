@@ -2,6 +2,10 @@ body {
     overflow-x: hidden;
 }
 
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
 .form-item input, .form-item textarea, .form-item select {
     display: block;
     width: 100%;
@@ -39,14 +43,19 @@ body {
 
 .article {
     position: relative;
-    width: 300px;
+    width: 380px;
     height: 420px;
-    margin: 0 20px 20px 0;
+    margin: 0 20px 60px 0;
+    transition: 0.3s;
+}
+
+.article:hover {
+    transform: scaleY(1.02) scaleX(1.02);
 }
 
 .article-img-container {
-    width: 300px;
-    height: 180px;
+    width: 380px;
+    height: 210px;
     overflow: hidden;
     border-radius: 10px;
 }
@@ -85,3 +94,61 @@ body {
     position: absolute;
     bottom: 0;
 }
+
+.articleView {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.articleView-img-container {
+    width: 800px;
+    height: 500px;
+    margin-right: 50px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.articleView-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.articleView-body {
+    display: block;
+    width: 500px;
+}
+
+.articleView-body-description {
+    display: block;
+}
+
+.imgGallery-container {
+    display: flex;
+}
+
+.imgGallery-imgBox {
+    position: relative;
+    width: 150px;
+    height: 100px;
+    margin: 0 20px 20px 0;
+    transition: 0.3s;
+}
+
+.imgGallery-imgBox:hover + .imgGallery-photoDelete,  .imgGallery-photoDelete:hover {
+    display: inherit;
+} 
+
+.imgGallery-imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.imgGallery-delete {
+    position: absolute;
+    bottom: 0;
+    padding: 0 0 5px 5px;
+}
+

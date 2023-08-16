@@ -6,9 +6,11 @@ app_name = "points"
 
 urlpatterns = [
     path("", views.Index.as_view(), name="index"),
+    path("school/articles/view/<int:pk>", views.ViewArticle.as_view(), name="article_view"),
     path("school/articles/create", views.CreateArticle.as_view(), name="article_create"),
     path("school/articles/edit/<int:pk>", views.EditArticle.as_view(), name="article_edit"),
     path("school/articles/delete/<int:pk>", views.DeleteArticle.as_view(), name="article_delete"),
+    path("school/photos/delete/<int:pk>", views.DeletePhoto.as_view(), name="photo_delete"),
     path("school/classes", views.ClassesList.as_view(), name="classes"),
     path("login", views.login_request, name="login"),
     path("logout", views.logout_request, name="logout"),

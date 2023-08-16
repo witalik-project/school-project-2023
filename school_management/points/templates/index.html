@@ -7,13 +7,13 @@
         {% for article in latests_articles %}
         <div class="article">
             <div class="article-img-container ">
-                <img src="{{ article.cover_photo }}" alt="Article cover photo">
+                <a href="{% url 'points:article_view' pk=article.id %}"><img src="{{ article.cover_photo.url }}" alt="Article cover photo"></a>
             </div>
             <div class="article-date-container">
                 <span class="article-date">{{ article.published_date }}</span>
             </div>
             <div class="article-body">
-                <a href="{% url 'points:classes' %}" class="article-title"><h5>{{ article.title }}</h5></a>
+                <a href="{% url 'points:article_view' pk=article.id %}" class="article-title"><h5>{{ article.title }}</h5></a>
                 <p class="article-description">{{ article.description | truncatechars:100 | capfirst }}</p>
             </div>
             {% if user.is_authenticated %}

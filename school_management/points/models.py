@@ -48,6 +48,14 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title
+    
+
+class Photo(models.Model):
+    article = models.ForeignKey(Article, on_delete=models.CASCADE)
+    photo = models.ImageField(verbose_name="Zdjęcie")
+
+    def __str__(self):
+        return f"{self.article.title} - {self.photo.url}"
 
 
 class PointsLog(models.Model):

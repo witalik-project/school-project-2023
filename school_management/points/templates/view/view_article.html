@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="articleView">
+            <div class="articleView-img-container">
+                <img src="{{ article.cover_photo.url }}" alt="Zdjęcie główne">
+            </div>
+            <div class="articleView-body">
+                <h2 style="text-decoration: underline;;">{{ article.title }}</h2><br>
+                <p class="articleView-body-description">{{ article.description }}</p>
+            </div>
+        </div>
+        <div class="imgGallery-container">
+            {% for photo in article.photo_set.all %}
+                    <div class="imgGallery-imgBox">
+                        <img src="{{ photo.photo.url }}" alt="Zdjęcie poboczne">
+                        <div class="imgGallery-delete">
+                            <form action="{% url 'points:photo_delete' pk=photo.id %}" method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <button class="imgGallery-photoDelete" type="submit"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

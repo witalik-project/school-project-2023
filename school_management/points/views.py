@@ -5,9 +5,10 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404, HttpResponseRedirect
-from django.views.generic import ListView
+from django.urls import reverse
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Classes, PointsLog, Article
+from .models import Classes, PointsLog, Article, Photo
 from .forms import (
     ArticlesCreateEditForm,
     ClassesEditExceptPointsForm,
@@ -24,8 +25,13 @@ class Index(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['latests_articles'] = Article.objects.order_by("-published_date")[:4]
+        context['latests_articles'] = Article.objects.order_by("-published_date")[:3]
         return context
+
+
+class ViewArticle(DetailView):
+    template_name = "view/view_article.html"
+    model = Article
 
 
 class CreateArticle(LoginRequiredMixin, CreateView):
@@ -46,6 +52,15 @@ class DeleteArticle(LoginRequiredMixin, DeleteView):
     template_name = "delete/delete_article.html"
     model = Article
     success_url = "/"
+
+
+class DeletePhoto(LoginRequiredMixin, DeleteView):
+    template_name = "view/view_article.html"
+    model = Photo
+
+    def get_success_url(self):
+        article_id = self.object.article.id
+        return reverse('points:article_view', kwargs={'pk': article_id})
 
 
 def login_request(request):
