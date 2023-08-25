@@ -1,7 +1,8 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block page_title %}
-Scoreboard
+    {% trans "Podium" %}
 {% endblock %}
 
 {% block content %}
@@ -9,7 +10,7 @@ Scoreboard
     <div class="row">
         <div class="card mx-auto" style="width: 18rem;">
             <div class="card-header text-center mt-2">
-                <b>Podium</b>
+                <b>{% trans "Podium" %}</b>
             </div>
             <ul class="list-group list-group-flush">
                 {% for class in classes %}
@@ -17,22 +18,22 @@ Scoreboard
                         <li class="list-group-item text-center"> 
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                             <br>
-                            <strong>{{ class.class_number }}{{ class.class_letter }}</strong> - {{ class.class_points }} punktów
+                            <strong>{{ class.class_number }}{{ class.class_letter }}</strong> - {{ class.class_points }} {% trans "punktów" %}
                         </li>
                     {% elif forloop.counter == 2 %}
                         <li class="list-group-item text-center"> 
                             <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                             <br>
-                            <strong>{{ class.class_number }}{{ class.class_letter }}</strong> - {{ class.class_points }} punktów
+                            <strong>{{ class.class_number }}{{ class.class_letter }}</strong> - {{ class.class_points }} {% trans "punktów" %}
                         </li>
                     {% elif forloop.counter == 3 %}
                         <li class="list-group-item text-center"> 
                             <i class="bi bi-star-fill"></i>
                             <br>
-                            <strong>{{ class.class_number }}{{ class.class_letter }}</strong> - {{ class.class_points }} punktów
+                            <strong>{{ class.class_number }}{{ class.class_letter }}</strong> - {{ class.class_points }} {% trans "punktów" %}
                         </li>
                     {% else %}
-                        <li class="list-group-item text-center"><strong>{{ class.class_number }}{{ class.class_letter }}</strong> - {{ class.class_points }} points</li>
+                        <li class="list-group-item text-center"><strong>{{ class.class_number }}{{ class.class_letter }}</strong> - {{ class.class_points }} {% trans "punktów" %}</li>
                     {% endif %}
                 {% endfor %}
             </ul>

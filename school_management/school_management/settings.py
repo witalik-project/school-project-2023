@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
     
     # Third-party apps:
     "bootstrapform",
@@ -53,6 +54,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -114,7 +116,14 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
+from django.utils.translation import gettext_lazy as _
+
 LANGUAGE_CODE = "pl"
+
+LANGUAGES = [
+    ('pl', _('Polish')),
+    ('lt', _('Lithuanian')),
+]
 
 TIME_ZONE = "Europe/Vilnius"
 
@@ -134,6 +143,11 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+MEDIA_URL = '/uploads/'
 MEDIA_ROOT = BASE_DIR / "uploads"
 
 LOGIN_REDIRECT_URL = "/"
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale", # base folder where manage.py resides
+]

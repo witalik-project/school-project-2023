@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block page_title %}
-    Zredaguj artykuł
+    {% trans "Zredaguj artykuł" %}
 {% endblock %}
 
 {% block content %}
-    <h1>Zredaguj {{ article.title }} - {{ article.published_date }} artykuł.</h1>
+    <h1>{% trans "Zredaguj" %} {{ article.title }} - {{ article.published_date }} {% trans "artykuł" %}</h1>
     <form action="{% url 'points:article_edit' pk=article.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
@@ -15,6 +16,6 @@
                 {{ field.errors }}
             </div>
         {% endfor %}
-        <button class="btn btn-primary" type="submit">Zapisz</button>
+        <button class="btn btn-primary" type="submit">{% trans "Zapisz" %}</button>
     </form>
 {% endblock %}

@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 from . models import Classes
+from django.conf.urls.i18n import i18n_patterns
 
 app_name = "points"
 
@@ -10,8 +11,10 @@ urlpatterns = [
     path("school/articles/create", views.CreateArticle.as_view(), name="article_create"),
     path("school/articles/edit/<int:pk>", views.EditArticle.as_view(), name="article_edit"),
     path("school/articles/delete/<int:pk>", views.DeleteArticle.as_view(), name="article_delete"),
+    path("school/photos/create/<int:pk>", views.CreatePhoto.as_view(), name="photo_create"),
     path("school/photos/delete/<int:pk>", views.DeletePhoto.as_view(), name="photo_delete"),
     path("school/classes", views.ClassesList.as_view(), name="classes"),
+    path("school/set_language", views.set_language, name="set_language"),
     path("login", views.login_request, name="login"),
     path("logout", views.logout_request, name="logout"),
     path("school/class/create", views.CreateClass.as_view(), name="class_create"),

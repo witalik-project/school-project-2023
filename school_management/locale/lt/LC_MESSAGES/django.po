@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-25 01:08+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
+
+#: points/filters.py:7
+msgid "Rok rejestru(-ów)"
+msgstr "Registro(-ų) metai"
+
+#: points/filters.py:10
+msgid "Mesiąc rejestru(-ów)"
+msgstr "Registro(-ų) mėnuo"
+
+#: points/filters.py:13
+msgid "Dzień rejestru(-ów)"
+msgstr "Registro(-ų) diena"
+
+#: points/forms.py:80 points/forms.py:92
+msgid "Dodać"
+msgstr "Pridėti"
+
+#: points/forms.py:81
+msgid "Odjąć"
+msgstr "Atimti"
+
+#: points/forms.py:85 points/models.py:62
+msgid "Klasa rejestru"
+msgstr "Registro klasė"
+
+#: points/forms.py:89
+msgid "Dodać lub odjąć punkty"
+msgstr "Pridėk ar atimk taškus"
+
+#: points/forms.py:95 points/forms.py:106
+msgid "Ilość"
+msgstr "Kiekis"
+
+#: points/models.py:18
+msgid "Klasy początkowe"
+msgstr "Prad. klasės"
+
+#: points/models.py:19
+msgid "Klasy średnie"
+msgstr "Vid. klasės"
+
+#: points/models.py:20
+msgid "Klasy starsze"
+msgstr "Vyr. klasės"
+
+#: points/models.py:23
+msgid "Numer klasy"
+msgstr "Klasės numeris"
+
+#: points/models.py:26
+msgid "Litera klasy"
+msgstr "Klasės raidė"
+
+#: points/models.py:29
+msgid "Poziom szkolnictwa"
+msgstr "Išsilavinimo lygis"
+
+#: points/models.py:32
+msgid "Imię wychowawczyni"
+msgstr "Auklėtojos(-o) vardas"
+
+#: points/models.py:33
+msgid "Nazwisko wychowawczyni"
+msgstr "Auklėtojos(-o) pavardė"
+
+#: points/models.py:34 templates/includes/navbar.html:48
+msgid "Punkty"
+msgstr "Taškai"
+
+#: points/models.py:44
+msgid "Nazwa tytułowa"
+msgstr "Titulinis pavadinimas"
+
+#: points/models.py:45
+msgid "Zdjęcie główne"
+msgstr "Titulinė nuotrauka"
+
+#: points/models.py:46
+msgid "Tekst"
+msgstr "Tekstas"
+
+#: points/models.py:55
+msgid "Zdjęcie"
+msgstr "Nuotrauka"
+
+#: points/models.py:63
+msgid "Data rejestru"
+msgstr "Registro data"
+
+#: points/models.py:64
+msgid "Typ rejestru"
+msgstr "Registro tipas"
+
+#: points/models.py:65
+msgid "Ilość punktów"
+msgstr "Taškų kiekis"
+
+#: points/models.py:68
+msgid "Przez kogo zrobiony rejestr"
+msgstr "Kas sudarė registrą"
+
+#: points/templates/classes_list.html:6
+msgid "Lista klas"
+msgstr "Klasių sąrašas"
+
+#: points/templates/classes_list.html:18
+msgid "Wychowawczyni:"
+msgstr "Auklėtoja(-as):"
+
+#: points/templates/classes_list.html:19
+msgid "Poziom szkolnictwa:"
+msgstr "Išsilavinimo lygis:"
+
+#: points/templates/classes_list.html:20
+msgid "Punkty:"
+msgstr "Taškai:"
+
+#: points/templates/create/create_add_points_log.html:5
+msgid "Dodaj punkty"
+msgstr "Pridėk taškus"
+
+#: points/templates/create/create_add_points_log.html:9
+msgid "Dodaj punkty dla"
+msgstr "Pridėk taškus"
+
+#: points/templates/create/create_add_points_log.html:9
+#: points/templates/create/create_subtract_points_log.html:9
+msgid "klasy"
+msgstr "klasei"
+
+#: points/templates/create/create_add_points_log.html:26
+#: points/templates/create/create_photo.html:28
+msgid "Dodaj"
+msgstr "Pridėk"
+
+#: points/templates/create/create_article.html:5
+#: points/templates/create/create_article.html:9
+msgid "Stwórz artykuł"
+msgstr "Sukurk straipsnį"
+
+#: points/templates/create/create_article.html:32
+#: points/templates/create/create_class.html:32
+#: templates/includes/navbar.html:32 templates/includes/navbar.html:42
+msgid "Stwórz"
+msgstr "Sukurk"
+
+#: points/templates/create/create_class.html:5
+#: points/templates/create/create_class.html:9
+msgid "Stwórz klasę"
+msgstr "Sukurk klasę"
+
+#: points/templates/create/create_photo.html:5
+#: points/templates/view/view_article.html:44
+msgid "Dodaj zdjęcie"
+msgstr "Pridėk nuotrauką "
+
+#: points/templates/create/create_photo.html:9
+msgid "Dodaj zdjęcie do"
+msgstr "Pridėk nuotrauką"
+
+#: points/templates/create/create_photo.html:9
+msgid "artykułu"
+msgstr "straipsniui"
+
+#: points/templates/create/create_points_log.html:5
+#: templates/includes/navbar.html:50
+msgid "Dodaj/odejmij punkty"
+msgstr "Pridėk/atimk taškus"
+
+#: points/templates/create/create_points_log.html:32
+msgid "Dodaj/odejmij"
+msgstr "Pridėk/atimk"
+
+#: points/templates/create/create_subtract_points_log.html:5
+msgid "Odejmij punkty"
+msgstr "Atimk taškus"
+
+#: points/templates/create/create_subtract_points_log.html:9
+msgid "Odejmij punkty dla"
+msgstr "Atimk taškus"
+
+#: points/templates/create/create_subtract_points_log.html:32
+msgid "Odejmij"
+msgstr "Atimk"
+
+#: points/templates/delete/delete_article.html:5
+#: points/templates/delete/delete_article.html:9
+msgid "Usuń artykuł"
+msgstr "Ištrink straipsnį"
+
+#: points/templates/delete/delete_article.html:12
+#: points/templates/delete/delete_class.html:12
+msgid "Jesteś pewny(-a) by usunąć"
+msgstr "Ar tikrai nori ištrinti"
+
+#: points/templates/delete/delete_article.html:12
+msgid "artykuł ?"
+msgstr "straipsnį ?"
+
+#: points/templates/delete/delete_article.html:13
+#: points/templates/delete/delete_class.html:13
+msgid "Usuń"
+msgstr "Ištrink"
+
+#: points/templates/delete/delete_class.html:5
+#: points/templates/delete/delete_class.html:9
+msgid "Usuń klasę"
+msgstr "Ištrink klasę"
+
+#: points/templates/delete/delete_class.html:12
+msgid "klasę ?"
+msgstr "klasę ?"
+
+#: points/templates/edit/edit_article.html:5
+msgid "Zredaguj artykuł"
+msgstr "Redaguok straipsnį"
+
+#: points/templates/edit/edit_article.html:9
+#: points/templates/edit/edit_class.html:9
+msgid "Zredaguj"
+msgstr "Redaguok"
+
+#: points/templates/edit/edit_article.html:9
+msgid "artykuł"
+msgstr "straipsnį"
+
+#: points/templates/edit/edit_article.html:19
+#: points/templates/edit/edit_class.html:19
+msgid "Zapisz"
+msgstr "Išsaugok"
+
+#: points/templates/edit/edit_class.html:5
+msgid "Zredaguj klasę"
+msgstr "Redaguok klasę"
+
+#: points/templates/edit/edit_class.html:9
+msgid "klasę"
+msgstr "klasę"
+
+#: points/templates/logs.html:6
+msgid "Rejestry dodawania/odejmowania punktów"
+msgstr "Taškų registrai"
+
+#: points/templates/logs.html:14 templates/includes/navbar.html:55
+msgid "Rejestry"
+msgstr "Registrai"
+
+#: points/templates/logs.html:20
+msgid "Szukaj"
+msgstr "Paieška"
+
+#: points/templates/logs.html:29 points/templates/logs.html:32
+msgid "punktów. Stworzone przez"
+msgstr "taškų. Sukurta"
+
+#: points/templates/logs.html:51
+msgid "Usuń rejestr(-y)"
+msgstr "Ištrink"
+
+#: points/templates/registration/login.html:24
+msgid "Zaloguj się"
+msgstr "Prisijunk"
+
+#: points/templates/registration/logout.html:9
+msgid "Jesteś pewny(-a) by wylogować"
+msgstr "Ar tikrai nori atsijungti"
+
+#: points/templates/registration/logout.html:10
+msgid "Wyloguj się"
+msgstr "Atsijunk"
+
+#: points/templates/scoreboard.html:5 points/templates/scoreboard.html:13
+#: templates/includes/navbar.html:59
+msgid "Podium"
+msgstr "Podiumas"
+
+#: points/templates/scoreboard.html:21 points/templates/scoreboard.html:27
+#: points/templates/scoreboard.html:33 points/templates/scoreboard.html:36
+msgid "punktów"
+msgstr "taškų"
+
+#: school_management/settings.py:124
+msgid "Polish"
+msgstr ""
+
+#: school_management/settings.py:125
+msgid "Lithuanian"
+msgstr ""
+
+#: templates/includes/footer.html:7
+msgid "Gimnazjum im. Szymona Konarskiego w Wilnie"
+msgstr "Vilniaus Simono Konarskio gimnazija"
+
+#: templates/includes/navbar.html:28
+msgid "Wiadomości"
+msgstr "Naujienos"
+
+#: templates/includes/navbar.html:30 templates/includes/navbar.html:40
+msgid "Lista"
+msgstr "Sąrašas"
+
+#: templates/includes/navbar.html:38
+msgid "Klasy"
+msgstr "Klasės"
+
+#: templates/includes/navbar.html:62
+msgid "Turnieje"
+msgstr "Turnyrai"

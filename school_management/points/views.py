@@ -11,12 +11,14 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Classes, PointsLog, Article, Photo
 from .forms import (
     ArticlesCreateEditForm,
+    PhotoCreateForm,
     ClassesEditExceptPointsForm,
     PointsLogCreateForm,
     PointsAddSubtractLogCreateEditForm,
     ClassesCreateEditForm,
 )
 from .filters import PointsLogFilter
+from django.utils.translation import activate, get_language
 
 
 class Index(ListView):
@@ -54,6 +56,27 @@ class DeleteArticle(LoginRequiredMixin, DeleteView):
     success_url = "/"
 
 
+class CreatePhoto(LoginRequiredMixin, CreateView):
+    template_name = "create/create_photo.html"
+    model = Photo
+    form_class = PhotoCreateForm
+
+    def get_success_url(self):
+        article_id = self.object.article.id
+        return reverse('points:article_view', kwargs={'pk': article_id})
+
+    def get_context_data(self, **kwargs):
+        context = super(CreatePhoto, self).get_context_data(**kwargs)
+        article = get_object_or_404(Article, pk=self.kwargs['pk'])
+        context['article'] = article
+        return context
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['article_pk'] = self.kwargs['pk']
+        return kwargs
+
+
 class DeletePhoto(LoginRequiredMixin, DeleteView):
     template_name = "view/view_article.html"
     model = Photo
@@ -61,6 +84,14 @@ class DeletePhoto(LoginRequiredMixin, DeleteView):
     def get_success_url(self):
         article_id = self.object.article.id
         return reverse('points:article_view', kwargs={'pk': article_id})
+    
+
+def set_language(request):
+    lang_code = request.POST.get('language')
+    if lang_code and get_language() != lang_code:
+        request.session['django_language'] = lang_code
+        activate(lang_code)
+    return redirect(request.META.get('HTTP_REFERER'))
 
 
 def login_request(request):
@@ -106,6 +137,7 @@ class CreateClass(LoginRequiredMixin, CreateView):
     model = Classes
     form_class = ClassesCreateEditForm
     success_url = "/school/classes"
+    
 
 
 class EditClass(LoginRequiredMixin, UpdateView):

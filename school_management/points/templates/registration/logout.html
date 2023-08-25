@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 <!--Logout-->
     <h1>Logout</h1>
     <form method="post">
         {% csrf_token %}
-        <p>Jesteś pewny(-a) by wylogować {{ request.user }} ?</p>
-        <button class="btn btn-primary" type="submit">Wyloguj się</button>
+        <p>{% trans "Jesteś pewny(-a) by wylogować" %} {{ request.user }} ?</p>
+        <button class="btn btn-primary" type="submit">{% trans "Wyloguj się" %}</button>
     </form>
 {% endblock %}

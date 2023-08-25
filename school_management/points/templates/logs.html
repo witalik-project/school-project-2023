@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load bootstrap %}
+{% load i18n %}
 
 {% block page_title %}
-    Rejestry dodawania/odejmowania punktów
+    {% trans "Rejestry dodawania/odejmowania punktów" %}
 {% endblock %}
 
 {% block content %}
@@ -10,13 +11,13 @@
     <div class="row">
         <div class="card mx-auto" style="width: 35rem;">
             <div class="card-header text-center mt-2">
-                <b>Rejestry</b>
+                <b>{% trans "Rejestry" %}</b>
             </div>
 
             <form method="GET">
                 {{ filter.form|bootstrap }}
                 <div class="text-end">
-                    <button type="submit" class="btn btn-primary mt-2 mb-2">Szukaj</button>
+                    <button type="submit" class="btn btn-primary mt-2 mb-2">{% trans "Szukaj" %}</button>
                 </div>
             </form>
             
@@ -25,10 +26,10 @@
                 <ul class="list-group list-group-flush">
                     {% for log in filter.qs %}
                         {% if log.points_log_type %}
-                            <li class="list-group-item"><input type="checkbox" id="logsCheckbox{{log.id}}" name="logs" value="{{log.id}}"> <label for="logsCheckbox{{log.id}}">{{ log.points_log_class.class_number }}{{ log.points_log_class.class_letter }} - {{ log.points_log_date }} - <i class="bi bi-plus-circle-fill"></i> {{ log.points_log_amount }} punktów. Stworzone przez - {{ log.points_log_created_by }}</label>
+                            <li class="list-group-item"><input type="checkbox" id="logsCheckbox{{log.id}}" name="logs" value="{{log.id}}"> <label for="logsCheckbox{{log.id}}">{{ log.points_log_class.class_number }}{{ log.points_log_class.class_letter }} - {{ log.points_log_date }} - <i class="bi bi-plus-circle-fill"></i> {{ log.points_log_amount }} {% trans "punktów. Stworzone przez" %} - {{ log.points_log_created_by }}</label>
                             </li>
                         {% else %}
-                            <li class="list-group-item"><input type="checkbox" id="logsCheckbox{{log.id}}" name="logs" value="{{log.id}}"> <label for="logsCheckbox{{log.id}}">{{ log.points_log_class.class_number }}{{ log.points_log_class.class_letter }} - {{ log.points_log_date }} - <i class="bi bi-dash-circle-fill"></i> {{ log.points_log_amount }} punktów. Stworzone przez - {{ log.points_log_created_by }}</label>
+                            <li class="list-group-item"><input type="checkbox" id="logsCheckbox{{log.id}}" name="logs" value="{{log.id}}"> <label for="logsCheckbox{{log.id}}">{{ log.points_log_class.class_number }}{{ log.points_log_class.class_letter }} - {{ log.points_log_date }} - <i class="bi bi-dash-circle-fill"></i> {{ log.points_log_amount }} {% trans "punktów. Stworzone przez" %} - {{ log.points_log_created_by }}</label>
                             </li>
                         {% endif %}
                     {% endfor %}
@@ -47,7 +48,7 @@
                     {% endfor %}
                 {% endif %}
                 <div class="text-end pt-2 mb-2">
-                    <button class="btn btn-danger" type="submit">Usuń rejestr(-y)</button>
+                    <button class="btn btn-danger" type="submit">{% trans "Usuń rejestr(-y)" %}</button>
                 </div>
             </form>
         </div>

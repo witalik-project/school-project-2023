@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <style>
     .dropdown:hover .dropdown-menu {
         display: block;
@@ -21,46 +23,62 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                {% if user.is_authenticated %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">Wiadomości</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/">Lista</a>
-                                <a class="dropdown-item" href="/school/articles/create">Stwórz</a>
-                            </ul>   
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">Klasy</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/school/classes">Lista</a>
-                                <a class="dropdown-item" href="/school/class/create">Stwórz</a>
-                            </ul>   
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">Punkty</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">{% trans "Wiadomości" %}</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="/school/points/log/create">Dodaj/odejmij punkty</a>
-                        </ul>
-                    </li>
+                            <a class="dropdown-item" href="/">{% trans "Lista" %}</a>
+                            {% if user.is_authenticated %}
+                                <a class="dropdown-item" href="/school/articles/create">{% trans "Stwórz" %}</a>
+                            {% endif %}
+                        </ul>   
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">{% trans "Klasy" %}</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/school/classes">{% trans "Lista" %}</a>
+                            {% if user.is_authenticated %}
+                                <a class="dropdown-item" href="/school/class/create">{% trans "Stwórz" %}</a>
+                            {% endif %}
+                        </ul>   
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">{% trans "Punkty" %}</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/school/points/log/create">{% trans "Dodaj/odejmij punkty" %}</a>
+                    </ul>
+                </li>
+                {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/school/points/log/history">Rejestry</a>
+                        <a class="nav-link active" aria-current="page" href="/school/points/log/history">{% trans "Rejestry" %}</a>
                     </li>
                 {% endif %}
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/school/scoreboard/">Podium</a>
+                    <a class="nav-link active" aria-current="page" href="/school/scoreboard/">{% trans "Podium" %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/tournaments/">Turnieje</a>
+                    <a class="nav-link active" aria-current="page" href="/tournaments/">{% trans "Turnieje" %}</a>
                 </li>
             </ul>
         </div>
     </div>
+    <i class="france flag"></i>
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+    {% get_language_info_list for LANGUAGES as languages %}
+        <form action="{% url 'set_language' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button type="submit" name="language" value="pl" class="switch-language"><img src="{% static 'pl_flag.png' %}" alt="PL" width="25" height="25"></button>
+        </form>
+        <form action="{% url 'set_language' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button type="submit" name="language" value="lt" class="switch-language"><img src="{% static 'lt_flag.png' %}" alt="LT" width="25" height="25"></button>
+        </form>
     {% if user.is_authenticated %}
-        <a class="navbar-brand text-right" aria-current="page" href="{% url 'points:logout' %}"><i class="bi bi-box-arrow-left"></i></i></a>
+        <a class="navbar-brand text-right" style="padding-left: 5px;" aria-current="page" href="{% url 'points:logout' %}"><i class="bi bi-box-arrow-left"></i></a>
     {% else %}
-        <a class="navbar-brand text-right" aria-current="page" href="{% url 'points:login' %}"><i class="bi bi-box-arrow-right"></i></a>
+        <a class="navbar-brand text-right" style="padding-left: 5px;" aria-current="page" href="{% url 'points:login' %}"><i class="bi bi-box-arrow-right"></i></a>
     {% endif %}
 </nav>

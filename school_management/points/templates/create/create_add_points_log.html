@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block page_title %}
-    Dodaj punkty
+    {% trans "Dodaj punkty" %}
 {% endblock %}
 
 {% block content %}
-    <h1>Dodaj punkty dla {{ classes.class_number }}{{classes.class_letter }} klasy</h1>
+    <h1>{% trans "Dodaj punkty dla" %} {{ classes.class_number }}{{ classes.class_letter }} {% trans "klasy" %}</h1>
     <form action="{% url 'points:points_add_log_create' pk=classes.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
@@ -22,6 +23,6 @@
                 </div>
             {% endfor %}
         {% endif %}
-        <button class="btn btn-primary" type="submit">Dodaj</button>
+        <button class="btn btn-primary" type="submit">{% trans "Dodaj" %}</button>
     </form>
 {% endblock %}

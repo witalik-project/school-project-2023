@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% load static %}
 
@@ -10,14 +11,37 @@
 <div class="container">
     <div class="row">
         <div class="articleView">
-            <div class="articleView-img-container">
-                <img src="{{ article.cover_photo.url }}" alt="Zdjęcie główne">
+
+
+
+            <div class="articleView-slider">
+                <div class="articleView-slides">
+                    <div class="articleView-slide">
+                        <img src="{{ article.cover_photo.url }}" class="slider-img" alt="Zdjęcie główne">
+                    </div>
+                    {% for photo in article.photo_set.all %}
+                        <div class="articleView-slide">
+                            <img src="{{ photo.photo.url }}" class="slider-img" alt="Zdjęcie główne">
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="articleView-sliderNavigation">
+                    <button type="submit" class="slider-navNext">Next</button>
+                    <button type="submit" class="slider-navPrev">Next</button>
+                    <button type="submit">Prev</button>
+                </div>
             </div>
+
+
+
             <div class="articleView-body">
-                <h2 style="text-decoration: underline;;">{{ article.title }}</h2><br>
+                <h2>{{ article.title }}</h2><br>
                 <div class="articleView-body-description" >{{ article.description }}</div>
             </div>
         </div>
+
+        {% if user.is_authenticated %}
+        <a href="{% url 'points:photo_create' pk=article.id %}" class="btn btn-primary" style="max-width: 170px; margin-bottom: 20px; margin-left: 10px;">{% trans "Dodaj zdjęcie" %} <i class="fa fa-plus" aria-hidden="true"></i></a>
         <div class="imgGallery-container">
             {% for photo in article.photo_set.all %}
                     <div class="imgGallery-imgBox">
@@ -31,6 +55,8 @@
                     </div>
             {% endfor %}
         </div>
+        {% endif %}
+
     </div>
 </div>
 {% endblock %}

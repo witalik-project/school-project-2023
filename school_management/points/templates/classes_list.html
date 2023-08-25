@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
+
+{% block page_title %}
+    {% trans "Lista klas" %}
+{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -10,9 +15,9 @@
                     <h5 class="card-title">{{ class.class_number }}{{ class.class_letter | capfirst }}</h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item"> Wychowawczyni: {{ class.class_teacher_name | title }} {{ class.class_teacher_surname | title }}</li>
-                    <li class="list-group-item">Poziom szkolnictwa: {{ class.class_school_level }}</li>
-                    <li class="list-group-item">Punkty: {{ class.class_points }}</li>
+                    <li class="list-group-item">{% trans "Wychowawczyni:" %} {{ class.class_teacher_name | title }} {{ class.class_teacher_surname | title }}</li>
+                    <li class="list-group-item">{% trans "Poziom szkolnictwa:" %} {{ class.class_school_level }}</li>
+                    <li class="list-group-item">{% trans "Punkty:" %} {{ class.class_points }}</li>
                 </ul>
                 {% if user.is_authenticated %}
                     <div class="card-body">

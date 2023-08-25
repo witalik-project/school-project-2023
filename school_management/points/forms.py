@@ -1,6 +1,7 @@
 from django import forms
-from .models import Article, Classes, PointsLog
+from .models import Article, Classes, Photo
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils.translation import gettext_lazy as _
 
 
 class ArticlesCreateEditForm(forms.ModelForm):
@@ -8,6 +9,18 @@ class ArticlesCreateEditForm(forms.ModelForm):
         model = Article
         fields = "__all__"
 
+
+class PhotoCreateForm(forms.ModelForm):
+    class Meta:
+        model = Photo
+        fields = "__all__"
+
+    def __init__(self, *args, **kwargs):
+        article_pk = kwargs.pop('article_pk')
+        super().__init__(*args, **kwargs)
+        self.fields['article'].widget = forms.HiddenInput()
+        self.fields['article'].initial = article_pk
+        
 
 class ClassesCreateEditForm(forms.ModelForm):
     class Meta:
@@ -64,22 +77,22 @@ class ClassesEditExceptPointsForm(forms.ModelForm):
 
 class PointsLogCreateForm(forms.Form):
     CHOICES = (
-        (True, 'Dodać'),
-        (None, 'Odjąć')
+        (True, _('Dodać')),
+        (None, _('Odjąć'))
     )
 
     points_log_class = forms.ModelChoiceField(
-        label="Klasa rejestru",
+        label=_("Klasa rejestru"),
         queryset=Classes.objects.all(),
     )
     points_log_type = forms.ChoiceField(
-        label="Dodać lub odjąć punkty",
+        label=_("Dodać lub odjąć punkty"),
         choices=CHOICES,
         required=False,
-        initial='Dodać'
+        initial=_('Dodać')
     )
     points_log_amount = forms.IntegerField(
-        label="Ilość",
+        label=_("Ilość"),
         validators=[MinValueValidator(1), MaxValueValidator(100)],
         error_messages={
             "required": "Proszę podać ilość punktów by dodać/odjąć",
@@ -90,7 +103,7 @@ class PointsLogCreateForm(forms.Form):
 
 class PointsAddSubtractLogCreateEditForm(forms.Form):
     points_log_amount = forms.IntegerField(
-        label="Ilość",
+        label=_("Ilość"),
         validators=[MinValueValidator(1), MaxValueValidator(100)],
         error_messages={
             "required": "Proszę podać ilość punktów by dodać/odjąć",

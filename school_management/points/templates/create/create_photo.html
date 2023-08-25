@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block page_title %}
+    {% trans "Dodaj zdjęcie" %}
+{% endblock %}
+
+{% block content %}
+    <h1>{% trans "Dodaj zdjęcie do" %} {{ article.title }} {% trans "artykułu" %}</h1>
+    <form action="{% url 'points:photo_create' pk=article.id %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-item mt-3 mb-3 d-none">
+            {{ form.article }}
+            <input type="hidden" name="{{ form.article.title }}" value="{{ form.article.value }}">
+        </div>
+        <div class="form-item mt-3 mb-3">
+            {{ form.photo.label_tag }}
+            {{ form.photo }}
+            {{ form.photo.errors }}
+        </div>
+        {% if form.non_field_errors %}
+            <div class="alert alert-danger">
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <button class="btn btn-primary" type="submit">{% trans "Dodaj" %}</button>
+    </form>
+{% endblock %}

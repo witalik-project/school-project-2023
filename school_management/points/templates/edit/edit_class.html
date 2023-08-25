@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block page_title %}
-    Zredaguj klasę
+    {% trans "Zredaguj klasę" %}
 {% endblock %}
 
 {% block content %}
-    <h1>Zredaguj {{ classes.class_number }}{{classes.class_letter }} klasę.</h1>
+    <h1>{% trans "Zredaguj" %} {{ classes.class_number }}{{classes.class_letter }} {% trans "klasę" %}</h1>
     <form action="{% url 'points:class_edit' pk=classes.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
@@ -15,6 +16,6 @@
                 {{ field.errors }}
             </div>
         {% endfor %}
-        <button class="btn btn-primary" type="submit">Zapisz</button>
+        <button class="btn btn-primary" type="submit">{% trans "Zapisz" %}</button>
     </form>
 {% endblock %}

@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block page_title %}
-    Stwórz artykuł
+    {% trans "Stwórz artykuł" %}
 {% endblock %}
 
 {% block content %}
-    <h1>Stwórz artykuł</h1>
+    <h1>{% trans "Stwórz artykuł" %}</h1>
     <form action="{% url 'points:article_create' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         {% for field in form %}
@@ -28,6 +29,6 @@
                 {% endif %}
             {% endfor %}
         {% endif %}
-        <button class="btn btn-primary" type="submit">Stwórz</button>
+        <button class="btn btn-primary" type="submit">{% trans "Stwórz" %}</button>
     </form>
 {% endblock %}

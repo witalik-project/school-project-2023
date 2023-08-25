@@ -41,6 +41,16 @@ body {
     fill: #222;
 }
 
+.switch-language {
+    border: none;
+    background: none;
+    transition: 0.3s;
+}
+
+.switch-language:hover {
+    transform: scaleX(1.1) scaleY(1.1);
+}
+
 .article {
     position: relative;
     width: 380px;
@@ -100,18 +110,39 @@ body {
     margin-bottom: 20px;
 }
 
-.articleView-img-container {
+.articleView-slider {
+    flex: 0 0 62.90%;
+    position: relative;
     width: 800px;
     height: 500px;
+    overflow: hidden;   
     margin-right: 50px;
-    overflow: hidden;
     border-radius: 10px;
 }
 
-.articleView-img-container img {
+.articleView-slides {
+    display: flex;
+    position: absolute;
+    left: 0;
+    transition: all 1s;
+    z-index: 1;
+}
+
+.articleView-slide {
+    width: 800px;
+    height: 500px;
+}
+
+.articleView-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.articleView-sliderNavigation {
+    position: absolute;
+    background-color: white;
+    z-index:2;
 }
 
 .articleView-body {
@@ -133,15 +164,12 @@ body {
 
 .imgGallery-imgBox {
     position: relative;
+    display: inline-block;
     width: 150px;
     height: 100px;
     margin: 0 20px 20px 0;
     transition: 0.3s;
 }
-
-.imgGallery-imgBox:hover + .imgGallery-photoDelete,  .imgGallery-photoDelete:hover {
-    display: inherit;
-} 
 
 .imgGallery-imgBox img {
     width: 100%;
@@ -154,5 +182,15 @@ body {
     position: absolute;
     bottom: 0;
     padding: 0 0 5px 5px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.imgGallery-imgBox:hover {
+    transform: scaleX(1.03) scaleY(1.03);
+}
+
+.imgGallery-imgBox:hover .imgGallery-delete {
+    opacity: 1;
 }
 

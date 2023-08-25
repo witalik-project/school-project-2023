@@ -1,0 +1,329 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-08-25 01:08+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && "
+"(n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && "
+"n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+
+#: points/filters.py:7
+msgid "Rok rejestru(-ów)"
+msgstr ""
+
+#: points/filters.py:10
+msgid "Mesiąc rejestru(-ów)"
+msgstr ""
+
+#: points/filters.py:13
+msgid "Dzień rejestru(-ów)"
+msgstr ""
+
+#: points/forms.py:80 points/forms.py:92
+msgid "Dodać"
+msgstr ""
+
+#: points/forms.py:81
+msgid "Odjąć"
+msgstr ""
+
+#: points/forms.py:85 points/models.py:62
+msgid "Klasa rejestru"
+msgstr ""
+
+#: points/forms.py:89
+msgid "Dodać lub odjąć punkty"
+msgstr ""
+
+#: points/forms.py:95 points/forms.py:106
+msgid "Ilość"
+msgstr ""
+
+#: points/models.py:18
+msgid "Klasy początkowe"
+msgstr ""
+
+#: points/models.py:19
+msgid "Klasy średnie"
+msgstr ""
+
+#: points/models.py:20
+msgid "Klasy starsze"
+msgstr ""
+
+#: points/models.py:23
+msgid "Numer klasy"
+msgstr ""
+
+#: points/models.py:26
+msgid "Litera klasy"
+msgstr ""
+
+#: points/models.py:29
+msgid "Poziom szkolnictwa"
+msgstr ""
+
+#: points/models.py:32
+msgid "Imię wychowawczyni"
+msgstr ""
+
+#: points/models.py:33
+msgid "Nazwisko wychowawczyni"
+msgstr ""
+
+#: points/models.py:34 templates/includes/navbar.html:48
+msgid "Punkty"
+msgstr ""
+
+#: points/models.py:44
+msgid "Nazwa tytułowa"
+msgstr ""
+
+#: points/models.py:45
+msgid "Zdjęcie główne"
+msgstr ""
+
+#: points/models.py:46
+msgid "Tekst"
+msgstr ""
+
+#: points/models.py:55
+msgid "Zdjęcie"
+msgstr ""
+
+#: points/models.py:63
+msgid "Data rejestru"
+msgstr ""
+
+#: points/models.py:64
+msgid "Typ rejestru"
+msgstr ""
+
+#: points/models.py:65
+msgid "Ilość punktów"
+msgstr ""
+
+#: points/models.py:68
+msgid "Przez kogo zrobiony rejestr"
+msgstr ""
+
+#: points/templates/classes_list.html:6
+msgid "Lista klas"
+msgstr ""
+
+#: points/templates/classes_list.html:18
+msgid "Wychowawczyni:"
+msgstr ""
+
+#: points/templates/classes_list.html:19
+msgid "Poziom szkolnictwa:"
+msgstr ""
+
+#: points/templates/classes_list.html:20
+msgid "Punkty:"
+msgstr ""
+
+#: points/templates/create/create_add_points_log.html:5
+msgid "Dodaj punkty"
+msgstr ""
+
+#: points/templates/create/create_add_points_log.html:9
+msgid "Dodaj punkty dla"
+msgstr ""
+
+#: points/templates/create/create_add_points_log.html:9
+#: points/templates/create/create_subtract_points_log.html:9
+msgid "klasy"
+msgstr ""
+
+#: points/templates/create/create_add_points_log.html:26
+#: points/templates/create/create_photo.html:28
+msgid "Dodaj"
+msgstr ""
+
+#: points/templates/create/create_article.html:5
+#: points/templates/create/create_article.html:9
+msgid "Stwórz artykuł"
+msgstr ""
+
+#: points/templates/create/create_article.html:32
+#: points/templates/create/create_class.html:32
+#: templates/includes/navbar.html:32 templates/includes/navbar.html:42
+msgid "Stwórz"
+msgstr ""
+
+#: points/templates/create/create_class.html:5
+#: points/templates/create/create_class.html:9
+msgid "Stwórz klasę"
+msgstr ""
+
+#: points/templates/create/create_photo.html:5
+#: points/templates/view/view_article.html:44
+msgid "Dodaj zdjęcie"
+msgstr ""
+
+#: points/templates/create/create_photo.html:9
+msgid "Dodaj zdjęcie do"
+msgstr ""
+
+#: points/templates/create/create_photo.html:9
+msgid "artykułu"
+msgstr ""
+
+#: points/templates/create/create_points_log.html:5
+#: templates/includes/navbar.html:50
+msgid "Dodaj/odejmij punkty"
+msgstr ""
+
+#: points/templates/create/create_points_log.html:32
+msgid "Dodaj/odejmij"
+msgstr ""
+
+#: points/templates/create/create_subtract_points_log.html:5
+msgid "Odejmij punkty"
+msgstr ""
+
+#: points/templates/create/create_subtract_points_log.html:9
+msgid "Odejmij punkty dla"
+msgstr ""
+
+#: points/templates/create/create_subtract_points_log.html:32
+msgid "Odejmij"
+msgstr ""
+
+#: points/templates/delete/delete_article.html:5
+#: points/templates/delete/delete_article.html:9
+msgid "Usuń artykuł"
+msgstr ""
+
+#: points/templates/delete/delete_article.html:12
+#: points/templates/delete/delete_class.html:12
+msgid "Jesteś pewny(-a) by usunąć"
+msgstr ""
+
+#: points/templates/delete/delete_article.html:12
+msgid "artykuł ?"
+msgstr ""
+
+#: points/templates/delete/delete_article.html:13
+#: points/templates/delete/delete_class.html:13
+msgid "Usuń"
+msgstr ""
+
+#: points/templates/delete/delete_class.html:5
+#: points/templates/delete/delete_class.html:9
+msgid "Usuń klasę"
+msgstr ""
+
+#: points/templates/delete/delete_class.html:12
+msgid "klasę ?"
+msgstr ""
+
+#: points/templates/edit/edit_article.html:5
+msgid "Zredaguj artykuł"
+msgstr ""
+
+#: points/templates/edit/edit_article.html:9
+#: points/templates/edit/edit_class.html:9
+msgid "Zredaguj"
+msgstr ""
+
+#: points/templates/edit/edit_article.html:9
+msgid "artykuł"
+msgstr ""
+
+#: points/templates/edit/edit_article.html:19
+#: points/templates/edit/edit_class.html:19
+msgid "Zapisz"
+msgstr ""
+
+#: points/templates/edit/edit_class.html:5
+msgid "Zredaguj klasę"
+msgstr ""
+
+#: points/templates/edit/edit_class.html:9
+msgid "klasę"
+msgstr ""
+
+#: points/templates/logs.html:6
+msgid "Rejestry dodawania/odejmowania punktów"
+msgstr ""
+
+#: points/templates/logs.html:14 templates/includes/navbar.html:55
+msgid "Rejestry"
+msgstr ""
+
+#: points/templates/logs.html:20
+msgid "Szukaj"
+msgstr ""
+
+#: points/templates/logs.html:29 points/templates/logs.html:32
+msgid "punktów. Stworzone przez"
+msgstr ""
+
+#: points/templates/logs.html:51
+msgid "Usuń rejestr(-y)"
+msgstr ""
+
+#: points/templates/registration/login.html:24
+msgid "Zaloguj się"
+msgstr ""
+
+#: points/templates/registration/logout.html:9
+msgid "Jesteś pewny(-a) by wylogować"
+msgstr ""
+
+#: points/templates/registration/logout.html:10
+msgid "Wyloguj się"
+msgstr ""
+
+#: points/templates/scoreboard.html:5 points/templates/scoreboard.html:13
+#: templates/includes/navbar.html:59
+msgid "Podium"
+msgstr ""
+
+#: points/templates/scoreboard.html:21 points/templates/scoreboard.html:27
+#: points/templates/scoreboard.html:33 points/templates/scoreboard.html:36
+msgid "punktów"
+msgstr ""
+
+#: school_management/settings.py:124
+msgid "Polish"
+msgstr ""
+
+#: school_management/settings.py:125
+msgid "Lithuanian"
+msgstr ""
+
+#: templates/includes/footer.html:7
+msgid "Gimnazjum im. Szymona Konarskiego w Wilnie"
+msgstr ""
+
+#: templates/includes/navbar.html:28
+msgid "Wiadomości"
+msgstr ""
+
+#: templates/includes/navbar.html:30 templates/includes/navbar.html:40
+msgid "Lista"
+msgstr ""
+
+#: templates/includes/navbar.html:38
+msgid "Klasy"
+msgstr ""
+
+#: templates/includes/navbar.html:62
+msgid "Turnieje"
+msgstr ""
