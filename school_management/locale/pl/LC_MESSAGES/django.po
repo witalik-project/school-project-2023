@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-25 01:08+0300\n"
+"POT-Creation-Date: 2023-08-25 15:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,6 +162,9 @@ msgstr ""
 #: points/templates/create/create_article.html:32
 #: points/templates/create/create_class.html:32
 #: templates/includes/navbar.html:32 templates/includes/navbar.html:42
+#: tournaments/templates/create/create_battle.html:48
+#: tournaments/templates/create/create_day.html:28
+#: tournaments/templates/create/create_tournament.html:32
 msgid "Stwórz"
 msgstr ""
 
@@ -211,6 +214,9 @@ msgstr ""
 
 #: points/templates/delete/delete_article.html:12
 #: points/templates/delete/delete_class.html:12
+#: tournaments/templates/delete/delete_battle.html:12
+#: tournaments/templates/delete/delete_day.html:12
+#: tournaments/templates/delete/delete_tournament.html:12
 msgid "Jesteś pewny(-a) by usunąć"
 msgstr ""
 
@@ -220,6 +226,9 @@ msgstr ""
 
 #: points/templates/delete/delete_article.html:13
 #: points/templates/delete/delete_class.html:13
+#: tournaments/templates/delete/delete_battle.html:13
+#: tournaments/templates/delete/delete_day.html:13
+#: tournaments/templates/delete/delete_tournament.html:13
 msgid "Usuń"
 msgstr ""
 
@@ -238,6 +247,9 @@ msgstr ""
 
 #: points/templates/edit/edit_article.html:9
 #: points/templates/edit/edit_class.html:9
+#: tournaments/templates/edit/edit_battle.html:9
+#: tournaments/templates/edit/edit_day.html:9
+#: tournaments/templates/edit/edit_tournament.html:9
 msgid "Zredaguj"
 msgstr ""
 
@@ -247,6 +259,9 @@ msgstr ""
 
 #: points/templates/edit/edit_article.html:19
 #: points/templates/edit/edit_class.html:19
+#: tournaments/templates/edit/edit_battle.html:32
+#: tournaments/templates/edit/edit_day.html:28
+#: tournaments/templates/edit/edit_tournament.html:32
 msgid "Zapisz"
 msgstr ""
 
@@ -324,6 +339,208 @@ msgstr ""
 msgid "Klasy"
 msgstr ""
 
-#: templates/includes/navbar.html:62
+#: templates/includes/navbar.html:62 tournaments/templates/home.html:6
 msgid "Turnieje"
+msgstr ""
+
+#: tournaments/forms.py:11
+msgid "Data początku (np. 2022-02-22 lub 22.02.2022)"
+msgstr ""
+
+#: tournaments/forms.py:12
+msgid "Data końca (np. 2022-02-22 lub 22.02.2022)"
+msgstr ""
+
+#: tournaments/forms.py:23
+msgid "Najmniej w turnieju może uczestniczyć dwie klasy"
+msgstr ""
+
+#: tournaments/forms.py:27
+msgid "Koniec turnieju nie może być wcześniej jego początku"
+msgstr ""
+
+#: tournaments/forms.py:37 tournaments/forms.py:63
+msgid "Data (np. 2022-02-22 lub 22.02.2022)"
+msgstr ""
+
+#: tournaments/forms.py:53 tournaments/forms.py:79
+msgid "Dzień pojedynków powinien być w przedziale początku i końca turnieju"
+msgstr ""
+
+#: tournaments/forms.py:89 tournaments/forms.py:118
+msgid "Czas pojedynku (hh:mm, np. 15:00)"
+msgstr ""
+
+#: tournaments/forms.py:108
+msgid "Pierwszy i drugi przeciwnik nie może być ta sama klasa"
+msgstr ""
+
+#: tournaments/models.py:6
+msgid "Nazwa turnieju"
+msgstr ""
+
+#: tournaments/models.py:7
+msgid "Uczestniczące klasy"
+msgstr ""
+
+#: tournaments/models.py:8
+msgid "Data początku"
+msgstr ""
+
+#: tournaments/models.py:9
+msgid "Data końca"
+msgstr ""
+
+#: tournaments/models.py:10
+msgid "Aktywny (tak/nie)"
+msgstr ""
+
+#: tournaments/models.py:16 tournaments/templates/view/view_tournament.html:6
+msgid "Turniej"
+msgstr ""
+
+#: tournaments/models.py:17
+msgid "Data"
+msgstr ""
+
+#: tournaments/models.py:25 tournaments/models.py:29
+msgid "Pierwszy przeciwnik"
+msgstr ""
+
+#: tournaments/models.py:26 tournaments/models.py:30
+msgid "Drugi przeciwnik"
+msgstr ""
+
+#: tournaments/models.py:28 tournaments/templates/view/view_tournament.html:25
+msgid "Dzień"
+msgstr ""
+
+#: tournaments/models.py:31
+msgid "Czas pojedynku"
+msgstr ""
+
+#: tournaments/models.py:32
+msgid "Pojedynek skończony"
+msgstr ""
+
+#: tournaments/models.py:33
+msgid "Zwycięzca"
+msgstr ""
+
+#: tournaments/templates/create/create_battle.html:5
+#: tournaments/templates/view/view_day.html:15
+msgid "Stwórz pojedynek"
+msgstr ""
+
+#: tournaments/templates/create/create_battle.html:9
+msgid "Stwórz pojedynek dla"
+msgstr ""
+
+#: tournaments/templates/create/create_battle.html:9
+#: tournaments/templates/create/create_day.html:9
+msgid "turnieju"
+msgstr ""
+
+#: tournaments/templates/create/create_day.html:5
+msgid "Stwórz dzień"
+msgstr ""
+
+#: tournaments/templates/create/create_day.html:9
+msgid "Stwórz dzień pojedynków dla"
+msgstr ""
+
+#: tournaments/templates/create/create_tournament.html:5
+#: tournaments/templates/create/create_tournament.html:9
+#: tournaments/templates/home.html:13
+msgid "Stwórz turniej"
+msgstr ""
+
+#: tournaments/templates/delete/delete_battle.html:5
+#: tournaments/templates/delete/delete_battle.html:9
+msgid "Usuń pojedynek"
+msgstr ""
+
+#: tournaments/templates/delete/delete_battle.html:12
+msgid "pojedynek ?"
+msgstr ""
+
+#: tournaments/templates/delete/delete_day.html:5
+#: tournaments/templates/delete/delete_day.html:9
+msgid "Usuń dzień pojedynków"
+msgstr ""
+
+#: tournaments/templates/delete/delete_day.html:12
+msgid "dzień pojedynków ?"
+msgstr ""
+
+#: tournaments/templates/delete/delete_tournament.html:5
+#: tournaments/templates/delete/delete_tournament.html:9
+msgid "Usuń turniej"
+msgstr ""
+
+#: tournaments/templates/delete/delete_tournament.html:12
+msgid "turniej ?"
+msgstr ""
+
+#: tournaments/templates/edit/edit_battle.html:5
+msgid "Zredaguj pojedynek"
+msgstr ""
+
+#: tournaments/templates/edit/edit_battle.html:9
+msgid "pojedynek"
+msgstr ""
+
+#: tournaments/templates/edit/edit_day.html:5
+msgid "Zredaguj dzień pojedynków"
+msgstr ""
+
+#: tournaments/templates/edit/edit_day.html:9
+msgid "dzień pojedynków"
+msgstr ""
+
+#: tournaments/templates/edit/edit_tournament.html:5
+msgid "Zredaguj turniej"
+msgstr ""
+
+#: tournaments/templates/edit/edit_tournament.html:9
+msgid "turniej"
+msgstr ""
+
+#: tournaments/templates/home.html:24
+msgid "Uczestniczące klasy:"
+msgstr ""
+
+#: tournaments/templates/home.html:32
+msgid "Początek:"
+msgstr ""
+
+#: tournaments/templates/home.html:33
+msgid "Koniec:"
+msgstr ""
+
+#: tournaments/templates/home.html:35 tournaments/templates/home.html:37
+msgid "Aktywny:"
+msgstr ""
+
+#: tournaments/templates/view/view_day.html:6
+msgid "Dzień pojedynków"
+msgstr ""
+
+#: tournaments/templates/view/view_day.html:26
+#: tournaments/templates/view/view_tournament.html:26
+msgid "Data:"
+msgstr ""
+
+#: tournaments/templates/view/view_day.html:27
+msgid "Czas:"
+msgstr ""
+
+#: tournaments/templates/view/view_day.html:30
+#: tournaments/templates/view/view_day.html:32
+#: tournaments/templates/view/view_day.html:35
+msgid "Zwycięzca:"
+msgstr ""
+
+#: tournaments/templates/view/view_tournament.html:15
+msgid "Stwórz dzień pojedynków"
 msgstr ""

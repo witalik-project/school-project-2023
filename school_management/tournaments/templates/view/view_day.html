@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block page_title %}
-    Dzień pojedynków
+    {% trans "Dzień pojedynków" %}
 {% endblock %}
 
 {% block content %}
@@ -11,7 +12,7 @@
             <h1 style="margin-bottom: 20px;">{{ tournamentday.tournament | title }} - {{ tournamentday.day_date }}</h1>
 
             {% if user.is_authenticated %}
-                <h4>Stwórz pojedynek 
+                <h4>{% trans "Stwórz pojedynek" %} 
                     <a href="{% url 'tournaments:tournament_battle_create' pk=tournamentday.id %}" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i></a>
                 </h4>
             {% endif %}
@@ -22,16 +23,16 @@
                 <div class="card mb-3" style="width: 18rem; margin-right: 15px;">
                     <div class="card-body">
                         <h5 class="card-title"><span class="badge bg-danger">{{ battle.battle_first_oponent.class_number }}{{ battle.battle_first_oponent.class_letter }}</span> VS <span class="badge bg-primary">{{ battle.battle_second_oponent.class_number }}{{ battle.battle_second_oponent.class_letter }}</span></h5>
-                        <p class="card-text">Data: {{ battle.battle_day.day_date }}</p>
-                        <p class="card-text">Czas: {{ battle.battle_time }}</p>
+                        <p class="card-text">{% trans "Data:" %} {{ battle.battle_day.day_date }}</p>
+                        <p class="card-text">{% trans "Czas:" %} {{ battle.battle_time }}</p>
                         {% if battle.winner %}
                             {% if battle.winner == 'FO' %}
-                                <p class="card-text">Zwycięzca: <span class="badge bg-danger">{{ battle.battle_first_oponent.class_number }}{{ battle.battle_first_oponent.class_letter }}</span></p>
+                                <p class="card-text">{% trans "Zwycięzca:" %} <span class="badge bg-danger">{{ battle.battle_first_oponent.class_number }}{{ battle.battle_first_oponent.class_letter }}</span></p>
                             {% elif battle.winner == 'SO' %}
-                                <p class="card-text">Zwycięzca: <span class="badge bg-primary">{{ battle.battle_second_oponent.class_number }}{{ battle.battle_second_oponent.class_letter }}</span></p>
+                                <p class="card-text">{% trans "Zwycięzca:" %} <span class="badge bg-primary">{{ battle.battle_second_oponent.class_number }}{{ battle.battle_second_oponent.class_letter }}</span></p>
                             {% endif %}
                         {% else %}
-                            <p class="card-text">Zwycięzca: <span class="badge bg-secondary">-</span></p>  
+                            <p class="card-text">{% trans "Zwycięzca:" %} <span class="badge bg-secondary">-</span></p>  
                         {% endif %}
 
                         <hr>

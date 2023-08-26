@@ -1,11 +1,12 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block page_title %}
-    Stwórz dzień 
+    {% trans "Stwórz dzień" %} 
 {% endblock %}
 
 {% block content %}
-    <h1>Stwórz dzień pojedynków dla {{ tournament.tournament_name }} turnieju</h1>
+    <h1>{% trans "Stwórz dzień pojedynków dla" %} {{ tournament.tournament_name }} {% trans "turnieju" %}</h1>
     <form action="{% url 'tournaments:tournament_day_create' pk=tournament.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-item mt-3 mb-3 d-none">
@@ -24,6 +25,6 @@
                 {% endfor %}
             </div>
         {% endif %}
-        <button class="btn btn-primary" type="submit">Stwórz</button>
+        <button class="btn btn-primary" type="submit">{% trans "Stwórz" %}</button>
     </form>
 {% endblock %}

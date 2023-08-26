@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block page_title %}
-    Turniej
+    {% trans "Turniej" %}
 {% endblock %}
 
 {% block content %}
@@ -11,7 +12,7 @@
             <h1 style="margin-bottom: 20px;">{{ tournament.tournament_name | title }}</h1>
 
             {% if user.is_authenticated %}
-            <h4>Stwórz dzień pojedynków 
+            <h4>{% trans "Stwórz dzień pojedynków" %} 
                 <a href="{% url 'tournaments:tournament_day_create' pk=tournament.id %}" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i></a>
             </h4>
             {% endif %}
@@ -21,8 +22,8 @@
             {% for day in tournament.tournamentday_set.all %}
                 <div class="card mb-3" style="width: 18rem; margin-right: 15px;">
                     <div class="card-body">
-                        <h5 class="card-title">Dzień</h5>
-                        <p class="card-text">Data: {{ day.day_date }}</p>
+                        <h5 class="card-title">{% trans "Dzień" %}</h5>
+                        <p class="card-text">{% trans "Data:" %} {{ day.day_date }}</p>
 
                         <hr>
 

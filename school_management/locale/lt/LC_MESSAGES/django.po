@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-25 01:08+0300\n"
+"POT-Creation-Date: 2023-08-25 15:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -162,6 +162,9 @@ msgstr "Sukurk straipsnį"
 #: points/templates/create/create_article.html:32
 #: points/templates/create/create_class.html:32
 #: templates/includes/navbar.html:32 templates/includes/navbar.html:42
+#: tournaments/templates/create/create_battle.html:48
+#: tournaments/templates/create/create_day.html:28
+#: tournaments/templates/create/create_tournament.html:32
 msgid "Stwórz"
 msgstr "Sukurk"
 
@@ -211,6 +214,9 @@ msgstr "Ištrink straipsnį"
 
 #: points/templates/delete/delete_article.html:12
 #: points/templates/delete/delete_class.html:12
+#: tournaments/templates/delete/delete_battle.html:12
+#: tournaments/templates/delete/delete_day.html:12
+#: tournaments/templates/delete/delete_tournament.html:12
 msgid "Jesteś pewny(-a) by usunąć"
 msgstr "Ar tikrai nori ištrinti"
 
@@ -220,6 +226,9 @@ msgstr "straipsnį ?"
 
 #: points/templates/delete/delete_article.html:13
 #: points/templates/delete/delete_class.html:13
+#: tournaments/templates/delete/delete_battle.html:13
+#: tournaments/templates/delete/delete_day.html:13
+#: tournaments/templates/delete/delete_tournament.html:13
 msgid "Usuń"
 msgstr "Ištrink"
 
@@ -238,6 +247,9 @@ msgstr "Redaguok straipsnį"
 
 #: points/templates/edit/edit_article.html:9
 #: points/templates/edit/edit_class.html:9
+#: tournaments/templates/edit/edit_battle.html:9
+#: tournaments/templates/edit/edit_day.html:9
+#: tournaments/templates/edit/edit_tournament.html:9
 msgid "Zredaguj"
 msgstr "Redaguok"
 
@@ -247,6 +259,9 @@ msgstr "straipsnį"
 
 #: points/templates/edit/edit_article.html:19
 #: points/templates/edit/edit_class.html:19
+#: tournaments/templates/edit/edit_battle.html:32
+#: tournaments/templates/edit/edit_day.html:28
+#: tournaments/templates/edit/edit_tournament.html:32
 msgid "Zapisz"
 msgstr "Išsaugok"
 
@@ -324,6 +339,210 @@ msgstr "Sąrašas"
 msgid "Klasy"
 msgstr "Klasės"
 
-#: templates/includes/navbar.html:62
+#: templates/includes/navbar.html:62 tournaments/templates/home.html:6
 msgid "Turnieje"
 msgstr "Turnyrai"
+
+#: tournaments/forms.py:11
+msgid "Data początku (np. 2022-02-22 lub 22.02.2022)"
+msgstr "Pradžios data (pvz. 2022-02-22)"
+
+#: tournaments/forms.py:12
+msgid "Data końca (np. 2022-02-22 lub 22.02.2022)"
+msgstr "Pabaigos data (pvz. 2022-02-22)"
+
+#: tournaments/forms.py:23
+msgid "Najmniej w turnieju może uczestniczyć dwie klasy"
+msgstr "Turnyre gali dalyvauti mažiausiai dvi klasės"
+
+#: tournaments/forms.py:27
+msgid "Koniec turnieju nie może być wcześniej jego początku"
+msgstr "Turnyro pabaiga negali būti anksčiau nei jo pradžia"
+
+#: tournaments/forms.py:37 tournaments/forms.py:63
+msgid "Data (np. 2022-02-22 lub 22.02.2022)"
+msgstr "Data (pvz. 2022-02-22)"
+
+#: tournaments/forms.py:53 tournaments/forms.py:79
+msgid "Dzień pojedynków powinien być w przedziale początku i końca turnieju"
+msgstr "Dvikovos diena turėtų būti tarp turnyro pradžios ir pabaigos"
+
+#: tournaments/forms.py:89 tournaments/forms.py:118
+msgid "Czas pojedynku (hh:mm, np. 15:00)"
+msgstr "Dvikovos laikas (hh:mm, pvz. 15:00)"
+
+#: tournaments/forms.py:108
+msgid "Pierwszy i drugi przeciwnik nie może być ta sama klasa"
+msgstr "Pirmasis ir antrasis varžovas negali būti tą patį klasę"
+
+#: tournaments/models.py:6
+msgid "Nazwa turnieju"
+msgstr "Turnyro pavadinimas"
+
+#: tournaments/models.py:7
+msgid "Uczestniczące klasy"
+msgstr "Dalyvaujantys klasės"
+
+#: tournaments/models.py:8
+msgid "Data początku"
+msgstr "Pradžios data"
+
+#: tournaments/models.py:9
+msgid "Data końca"
+msgstr "Pabaigos data"
+
+#: tournaments/models.py:10
+msgid "Aktywny (tak/nie)"
+msgstr "Aktyvus (taip/ne)"
+
+#: tournaments/models.py:16 tournaments/templates/view/view_tournament.html:6
+msgid "Turniej"
+msgstr "Turnyras"
+
+#: tournaments/models.py:17
+msgid "Data"
+msgstr "Data"
+
+#: tournaments/models.py:25 tournaments/models.py:29
+msgid "Pierwszy przeciwnik"
+msgstr "Pirmasis varžovas"
+
+#: tournaments/models.py:26 tournaments/models.py:30
+msgid "Drugi przeciwnik"
+msgstr "Antrasis varžovas"
+
+#: tournaments/models.py:28 tournaments/templates/view/view_tournament.html:25
+msgid "Dzień"
+msgstr "Diena"
+
+#: tournaments/models.py:31
+msgid "Czas pojedynku"
+msgstr "Dvikovos laikas"
+
+#: tournaments/models.py:32
+msgid "Pojedynek skończony"
+msgstr "Dvikova baigėsi"
+
+#: tournaments/models.py:33
+msgid "Zwycięzca"
+msgstr "Nugalėtojas"
+
+#: tournaments/templates/create/create_battle.html:5
+#: tournaments/templates/view/view_day.html:15
+msgid "Stwórz pojedynek"
+msgstr "Sukurk dvikovą"
+
+#: tournaments/templates/create/create_battle.html:9
+#, fuzzy
+#| msgid "Stwórz klasę"
+msgid "Stwórz pojedynek dla"
+msgstr "Sukurk dvikovą"
+
+#: tournaments/templates/create/create_battle.html:9
+#: tournaments/templates/create/create_day.html:9
+msgid "turnieju"
+msgstr "turnyrui"
+
+#: tournaments/templates/create/create_day.html:5
+msgid "Stwórz dzień"
+msgstr "Sukurk dieną"
+
+#: tournaments/templates/create/create_day.html:9
+msgid "Stwórz dzień pojedynków dla"
+msgstr "Sukurk dvikovos dieną"
+
+#: tournaments/templates/create/create_tournament.html:5
+#: tournaments/templates/create/create_tournament.html:9
+#: tournaments/templates/home.html:13
+msgid "Stwórz turniej"
+msgstr "Sukurk turnyrą"
+
+#: tournaments/templates/delete/delete_battle.html:5
+#: tournaments/templates/delete/delete_battle.html:9
+msgid "Usuń pojedynek"
+msgstr "Ištrink dvikovą"
+
+#: tournaments/templates/delete/delete_battle.html:12
+msgid "pojedynek ?"
+msgstr "dvikovą ?"
+
+#: tournaments/templates/delete/delete_day.html:5
+#: tournaments/templates/delete/delete_day.html:9
+msgid "Usuń dzień pojedynków"
+msgstr "Ištrink dvikovos dieną"
+
+#: tournaments/templates/delete/delete_day.html:12
+msgid "dzień pojedynków ?"
+msgstr "dvikovos dieną ?"
+
+#: tournaments/templates/delete/delete_tournament.html:5
+#: tournaments/templates/delete/delete_tournament.html:9
+msgid "Usuń turniej"
+msgstr "Ištrink turnyrą"
+
+#: tournaments/templates/delete/delete_tournament.html:12
+msgid "turniej ?"
+msgstr "turnyrą ?"
+
+#: tournaments/templates/edit/edit_battle.html:5
+msgid "Zredaguj pojedynek"
+msgstr "Redaguok dvikovą"
+
+#: tournaments/templates/edit/edit_battle.html:9
+msgid "pojedynek"
+msgstr "dvikovą"
+
+#: tournaments/templates/edit/edit_day.html:5
+msgid "Zredaguj dzień pojedynków"
+msgstr "Redaguok dvikovos dieną"
+
+#: tournaments/templates/edit/edit_day.html:9
+msgid "dzień pojedynków"
+msgstr "dvikovos dieną"
+
+#: tournaments/templates/edit/edit_tournament.html:5
+msgid "Zredaguj turniej"
+msgstr "Redaguok turnyrą"
+
+#: tournaments/templates/edit/edit_tournament.html:9
+msgid "turniej"
+msgstr "turnyrą"
+
+#: tournaments/templates/home.html:24
+msgid "Uczestniczące klasy:"
+msgstr "Dalyvaujantys klasės:"
+
+#: tournaments/templates/home.html:32
+msgid "Początek:"
+msgstr "Pradžia:"
+
+#: tournaments/templates/home.html:33
+msgid "Koniec:"
+msgstr "Pabaiga:"
+
+#: tournaments/templates/home.html:35 tournaments/templates/home.html:37
+msgid "Aktywny:"
+msgstr "Aktyvus:"
+
+#: tournaments/templates/view/view_day.html:6
+msgid "Dzień pojedynków"
+msgstr "Dvikovos diena"
+
+#: tournaments/templates/view/view_day.html:26
+#: tournaments/templates/view/view_tournament.html:26
+msgid "Data:"
+msgstr "Data:"
+
+#: tournaments/templates/view/view_day.html:27
+msgid "Czas:"
+msgstr "Laikas:"
+
+#: tournaments/templates/view/view_day.html:30
+#: tournaments/templates/view/view_day.html:32
+#: tournaments/templates/view/view_day.html:35
+msgid "Zwycięzca:"
+msgstr "Nugalėtojas:"
+
+#: tournaments/templates/view/view_tournament.html:15
+msgid "Stwórz dzień pojedynków"
+msgstr "Sukurk dvikovos dieną"

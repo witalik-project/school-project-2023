@@ -1,14 +1,15 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block page_title %}
-    Usuń turniej
+    {% trans "Usuń turniej" %}
 {% endblock %}
 
 {% block content %}
-    <h1>Usuń turniej</h1>
+    <h1>{% trans "Usuń turniej" %}</h1>
     <form method="post">
         {% csrf_token %}
-        <p>Jesteś pewny(-a) by usunąć {{ tournament.tournament_name }} turniej ?</p>
-        <button class="btn btn-primary" type="submit">Usuń</button>
+        <p>{% trans "Jesteś pewny(-a) by usunąć" %} {{ tournament.tournament_name }} {% trans "turniej ?" %}</p>
+        <button class="btn btn-primary" type="submit">{% trans "Usuń" %}</button>
     </form>
 {% endblock %}
