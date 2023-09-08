@@ -1,4 +1,5 @@
 var index = 0;
+var r_buttons = document.querySelectorAll('.slider-navRadio');
 
 function changeSlide(slideIndex) {
   var width = document.querySelector('.articleView-slider').clientWidth;
@@ -14,6 +15,7 @@ function changeSlide(slideIndex) {
 
   // Update the index
   index = slideIndex;
+
 }
 
 function automaticSlide() {
